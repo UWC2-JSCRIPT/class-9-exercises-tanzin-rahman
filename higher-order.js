@@ -1,7 +1,11 @@
 // This function should execute the callback function the number of times specified.
 // When the function is being executed, the repetition number (i.e. 1 for the first call)
 // should be passed to the callback.
-const repeatFn = (times, callback) => {};
+const repeatFn = (times, callback) => {
+  for (let index = 0; index < times; index++) {
+    callback();
+  }
+};
 
 // Test repeatFn
 const addButton = num => {
@@ -11,12 +15,16 @@ const addButton = num => {
 };
 repeatFn(6, addButton);
 
-const toThePower = (num, pow) => {
-  let product = 1;
-  repeatFn(pow, () => {
-    product += product * num;
-  });
-  return product;
-};
+const logBunch = () =>{
+  console.log('LOG!!');
+}
 
-console.log(toThePower(3, 3));
+// const toThePower = (num, pow) => {
+//   let product = 1;
+//   repeatFn(pow, () => {
+//     product += product * num;
+//   });
+//   return product;
+// };
+
+// console.log(toThePower(3, 3));
